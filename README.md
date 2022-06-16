@@ -1,4 +1,4 @@
-#a javascript self-driving car machine learning project using no libraries
+# a javascript self-driving car machine learning project using no libraries
 
 [Try it live!](https://traagel.github.io/js_machine_learning/)
 
