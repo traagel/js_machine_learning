@@ -24,15 +24,15 @@ if(localStorage.getItem("bestBrain")) {
     }
 }
 const traffic=[
-    new Car(road.getLaneCenter(1),-100,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-100,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-300,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-500,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-700,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-800,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-1100,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-1300,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-1500,30,50,"DUMMY",2)
+    new Car(road.getLaneCenter(1),-100,30,50,"DUMMY",2.5),
+    new Car(road.getLaneCenter(2),-100,30,50,"DUMMY",1.2),
+    new Car(road.getLaneCenter(0),-300,30,50,"DUMMY",1.5),
+    new Car(road.getLaneCenter(1),-500,30,50,"DUMMY",3),
+    new Car(road.getLaneCenter(2),-700,30,50,"DUMMY",3.1),
+    new Car(road.getLaneCenter(0),-800,30,50,"DUMMY",1.3),
+    new Car(road.getLaneCenter(1),-1100,30,50,"DUMMY",2.2),
+    new Car(road.getLaneCenter(2),-1300,30,50,"DUMMY",2.1),
+    new Car(road.getLaneCenter(0),-1500,30,50,"DUMMY",2.6)
 ];
 
 animate();
