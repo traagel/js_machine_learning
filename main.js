@@ -2,7 +2,10 @@ const carCanvas=document.getElementById("carCanvas");
 carCanvas.width=200;
 const networkCanvas=document.getElementById("networkCanvas");
 carCanvas.width=200;
-
+const N = parseInt(document.getElementById("carCount").value);
+const maxSpeed = parseInt(document.getElementById("carSpeed").value);
+const sensorCount = parseInt(document.getElementById("sensorCount").value);
+const sensorRange = parseInt(document.getElementById("sensorRange").value);
 
 
 const ctx = carCanvas.getContext("2d");
@@ -11,7 +14,7 @@ const networkCtx = networkCanvas.getContext("2d");
 const road = new Road(carCanvas.width/2,carCanvas.width*0.9);
 
 //const car = new Car(road.getLaneCenter(1),100,30,50,"AI");
-const N = 500;
+
 const cars = generateCars(N);
 let bestCar=cars[0];
 if(localStorage.getItem("bestBrain")) {
@@ -35,7 +38,7 @@ const traffic=[
     new Car(road.getLaneCenter(0),-1500,30,50,"DUMMY",2.6)
 ];
 
-animate();
+//animate();
 
 function save(){
     localStorage.setItem("bestBrain",
@@ -44,12 +47,13 @@ function save(){
 
 function discard(){
     localStorage.removeItem("bestBrain");
+    sessionStorage.clear()
 }
 
 function generateCars(N){
     const cars=[];
     for(let i=1;i<=N;i++){
-        cars.push(new Car(road.getLaneCenter(1),100,30,50,"AI"));
+        cars.push(new Car(road.getLaneCenter(1),100,30,50,"AI", maxSpeed, sensorCount, sensorRange));
     }
     return cars;
 }

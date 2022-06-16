@@ -5,9 +5,23 @@
     <title>Self-driving car no libraries</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+
+<body onload="checkLoad()">
+
+<div id="loader">
+</div>
+<div id="entry">
+    Sensor count: <input type="text" id="sensorCount" value="5">
+    Sensor range: <input type="text" id="sensorRange" value="150">
+    Car count: <input type="text" id="carCount" value="50">
+    Car speed: <input type="text" id="carSpeed" value="3">
+    <button onclick="showPage()">Start</button>
+</div>
+<div id="myDiv" class="animate-bottom">
     <canvas id="carCanvas"></canvas>
     <div id="verticalButtons">
+        <button onclick="location.reload()">Generate New</button>
         <button onclick="save()">💾</button>
         <button onclick="discard()">❌</button>
     </div>
@@ -20,5 +34,24 @@
     <script src="controls.js"></script>
     <script src="car.js"></script>
     <script src="main.js"></script>
+</div>
+<script>
+    function checkLoad() {
+        if (localStorage.getItem('bestBrain')) {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("entry").style.display = "none";
+            document.getElementById("myDiv").style.display = "flex";
+            animate();
+        }
+    }
+
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("entry").style.display = "none";
+        document.getElementById("myDiv").style.display = "flex";
+        animate();
+    }
+
+</script>
 </body>
 </html>
